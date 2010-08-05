@@ -43,7 +43,7 @@ sub search {
     my $results = $self->elasticsearch->search(
         index  => 'metabase',
         type   => 'fact',
-        query  => { term => \%spec },
+        query  => { field => \%spec },
         fields => ['core.guid'],
     );
 
